@@ -1,38 +1,25 @@
-import React from 'react'; 
-import Image from 'next/image'; 
+import React from 'react';  
 import Script from 'next/script'; 
+import '../app/globals.css'
 
-import congratulations from '../assets/congratulations.png'; 
-import { SDKUsageDemo } from '../components/SDKUsageDemo'; 
+import SetLookerEmbed from '../components/SetLookerEmbed';
 import { MiroSDKInit } from '../components/SDKInit'; 
 
 export default function RootLayout({ children }) {
     return ( <html> 
+      <head>
+        <link rel="stylesheet" href="https://unpkg.com/mirotone@^5/dist/styles.css"></link>
+      </head>
       <body> 
-        <Script  src="https://miro.com/app/static/sdk/v2/miro.js"  strategy="beforeInteractive" /> 
+        <Script src="https://miro.com/app/static/sdk/v2/miro.js"  strategy="beforeInteractive" /> 
         <MiroSDKInit /> 
         <div id="root"> 
           <div className="grid"> 
+
             <div className="cs1 ce12"> 
-              <Image src={congratulations} alt=""/> 
-              <h1>Congratulations!</h1> 
-              <p>You've just created your first Miro app!</p> 
+              <SetLookerEmbed />
             </div> 
-            <div className="cs1 ce12"> 
-              <SDKUsageDemo /> 
-            </div> 
-            <hr className="cs1 ce12"/> 
-            <div className="cs1 ce12">{children}</div> 
-            <hr className="cs1 ce12"/> 
-            <div className="cs1 ce12"> 
-              <p> 
-                To explore more and build your own app, see the Miro Developer
-                Platform documentation.
-              </p> 
-              <a  className="button button-secondary"  target="_blank"  href="https://developers.miro.com" > 
-                Read the documentation
-              </a> 
-            </div> 
+
           </div> 
         </div> 
       </body> 
