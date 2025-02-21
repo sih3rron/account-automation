@@ -2,7 +2,7 @@ import React from 'react';
 import Script from 'next/script'; 
 import '../app/globals.css'
 
-import SetLookerEmbed from '../components/SetLookerEmbed';
+import SetLookerEmbed from '../components/CreateAccountPlan';
 import { MiroSDKInit } from '../components/SDKInit'; 
 
 export default function RootLayout({ children }) {
